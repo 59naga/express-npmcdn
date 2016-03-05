@@ -34,7 +34,7 @@
     "caravan": "^0.0.2",
     "del": "^2.2.0",
     "esdoc": "^0.4.5",
-    "eslint": "^1.10.3",
+    "eslint": "^2.3.0",
     "eslint-config-airbnb": "^4.0.0",
     "eslint-plugin-mocha": "^2.0.0",
     "espower-babel": "^4.0.1",
