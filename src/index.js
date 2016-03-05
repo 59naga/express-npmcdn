@@ -59,7 +59,7 @@ export default (cwd, options = {}) => {
       res.status(500).end(error.message);
     });
   });
-  
+
   // Redirect to latest version
   npmcdn.use('/:name', (req, res) => {
     const { name } = req.params;
