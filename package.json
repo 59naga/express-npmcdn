@@ -1,6 +1,7 @@
 {
   "name": "express-npmcdn",
   "description": "Hosting npm package files",
+  "main": "lib",
   "files": [
     "lib",
     "docs"
