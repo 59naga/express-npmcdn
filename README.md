@@ -21,6 +21,8 @@ Express NpmCDN
 
 > Hosting npm package files
 
+[API Reference](https://npmcdn.com/express-npmcdn/docs/index.html)
+
 Usage
 ---
 
@@ -67,8 +69,6 @@ curl -I http://localhost:59798/jquery@2.2.1/
 # Content-Length: 258549
 #...
 ```
-
-[API Reference](https://npmcdn.com/59naga/express-npmcdn/docs/index.html)
 
 Test
 ---
