@@ -34,10 +34,10 @@ npm install express-npmcdn --save
 ```
 
 ```js
-import express from 'express';
-import cors from 'cors';
-import compression from 'compression';
-import npmcdn from 'express-npmcdn';
+const express = require('express');
+const cors = require('cors');
+const compression = require('compression');
+const npmcdn = require('express-npmcdn');
 
 const port = process.env.PORT || 59798;
 const app = express();
@@ -69,6 +69,16 @@ curl -I http://localhost:59798/jquery@2.2.1/
 # Content-Length: 258549
 #...
 ```
+
+URL Format
+---
+* `/package-name` -> `latest version` / `main file`
+* `/package-name/README.md` -> `latest version` / `README.md`
+* `/package-name@version` -> `version` / `main file`
+* `/package-name@version/lib/` -> `version` / `lib/index.js`
+* `/package-name@version/docs/` -> `version` / `docs/index.html`
+
+[DEMO](https://cdn.berabou.me/jquery/)
 
 Test
 ---
