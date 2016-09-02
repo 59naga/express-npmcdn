@@ -1,5 +1,5 @@
 {
-  "name": "express-npmcdn",
+  "name": "express-unpkg",
   "description": "Hosting npm package files",
   "main": "lib",
   "files": [
@@ -54,10 +54,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/59naga/express-npmcdn.git"
+    "url": "https://github.com/59naga/express-unpkg.git"
   },
   "bugs": {
-    "url": "https://github.com/59naga/express-npmcdn/issues"
+    "url": "https://github.com/59naga/express-unpkg/issues"
   },
-  "homepage": "https://github.com/59naga/express-npmcdn#readme"
+  "homepage": "https://github.com/59naga/express-unpkg#readme"
 }
