@@ -1,4 +1,4 @@
-import npmcdn from '../src';
+import unpkg from '../src';
 import path from 'path';
 import del from 'del';
 import express from 'express';
@@ -21,7 +21,7 @@ describe('cdn', () => {
     del.sync(cwd);
 
     const app = express();
-    app.use(npmcdn(cwd, options));
+    app.use(unpkg(cwd, options));
 
     server = app.listen(port, done);
   });

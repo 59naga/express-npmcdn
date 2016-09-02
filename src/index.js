@@ -12,7 +12,7 @@ const requestAsync = Bluebird.promisify(request);
 const fs = Bluebird.promisifyAll(fsOrigin);
 
 /**
-* create npmcdn middleware
+* create unpkg middleware
 *
 * @function expressNpmcdn
 * @param {string} cwd - a package extract base path
@@ -20,17 +20,17 @@ const fs = Bluebird.promisifyAll(fsOrigin);
 * @param {object} [options.api] - tarball source
 * @param {object} [options.extensions] - see resolveFileName
 * @param {object} [options.maxAge] - send max age header
-* @return {Router} npmcdn - see http://expressjs.com/ja/api.html#router
+* @return {Router} unpkg - see http://expressjs.com/ja/api.html#router
 */
 export default (cwd, options = {}) => {
-  const npmcdn = express.Router();
+  const unpkg = express.Router();
   const opts = objectAssign({
     api: 'http://registry.npmjs.org',
     maxAge: 60 * 60 * 24 * 365, // one year
   }, options);
 
   // Fetch the request file or main
-  npmcdn.use('/:name@:version', (req, res) => {
+  unpkg.use('/:name@:version', (req, res) => {
     const { name, version } = req.params;
     const url = `${opts.api}/${name}/-/${name}-${version}.tgz`;
     const file = req.url.slice(1);
@@ -61,7 +61,7 @@ export default (cwd, options = {}) => {
   });
 
   // Redirect to latest version
-  npmcdn.use('/:name', (req, res) => {
+  unpkg.use('/:name', (req, res) => {
     const { name } = req.params;
 
     requestAsync(`${opts.api}/${name}`)
@@ -80,5 +80,5 @@ export default (cwd, options = {}) => {
     });
   });
 
-  return npmcdn;
+  return unpkg;
 };
